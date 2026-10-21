@@ -1,0 +1,75 @@
+{
+  "debug": false,
+  "stockage": {
+    "type": "JSON",
+    "sauvegarde-auto-minutes": 5,
+    "copies-de-securite": 3,
+    "json-indente": false,
+    "sqlite-fichier": "donnees.db",
+    "mysql": {
+      "hote": "localhost",
+      "port": 3306,
+      "base": "koriatotem",
+      "utilisateur": "root",
+      "mot-de-passe": "",
+      "prefixe-tables": "kt_",
+      "parametres": "?useSSL=false&characterEncoding=utf8"
+    }
+  },
+  "commande": { "nom": "totem", "alias": ["totems"], "description": "Évènement Totem" },
+  "commandes": {
+    "help": { "actif": true, "alias": ["?"], "permission": "koriatotem.command.help" },
+    "menu": { "actif": true, "alias": ["gui"], "permission": "koriatotem.command.menu" },
+    "list": { "actif": true, "alias": ["totems"], "permission": "koriatotem.command.list" },
+    "top": { "actif": true, "alias": ["leaderboard"], "permission": "koriatotem.command.top" },
+    "info": { "actif": true, "alias": ["next"], "permission": "koriatotem.command.info" },
+    "tp": { "actif": true, "alias": ["teleport"], "permission": "koriatotem.admin.tp" },
+    "start": { "actif": true, "alias": ["begin", "spawn"], "permission": "koriatotem.admin.start" },
+    "stop": { "actif": true, "alias": ["end"], "permission": "koriatotem.admin.stop" },
+    "create": { "actif": true, "alias": ["new"], "permission": "koriatotem.admin.create" },
+    "delete": { "actif": true, "alias": ["del", "remove"], "permission": "koriatotem.admin.delete" },
+    "position": { "actif": true, "alias": ["setpos", "move"], "permission": "koriatotem.admin.position" },
+    "config": { "actif": true, "alias": ["configuration", "cfg"], "permission": "koriatotem.admin.config" },
+    "save": { "actif": true, "alias": [], "permission": "koriatotem.admin.save" },
+    "reload": { "actif": true, "alias": ["rl"], "permission": "koriatotem.admin.reload" }
+  },
+  "planning": { "actif": true, "fuseau": "Europe/Paris", "annonce-avant-minutes": [60, 30, 10, 5, 1] },
+  "evenement": {
+    "un-seul-a-la-fois": true,
+    "materiau": "OBSIDIAN",
+    "hauteur": 5,
+    "mode-victoire": "DERNIER-BLOC",
+    "reconstruction": true,
+    "duree-max-minutes": 30,
+    "cible-recompenses": "PARTICIPANTS",
+    "points-victoire": 500,
+    "annonce-globale": true,
+    "annonce-blocs-restants": [3, 2, 1],
+    "participation-blocs-minimum": 1,
+    "feux-artifice": true,
+    "joueurs-sans-faction": true
+  },
+  "anti-abus": { "ignorer-creatif": true, "permissions-ignorees": ["koriatotem.ignore"] },
+  "protection": { "rayon": 4, "casser-blocs": true, "poser-blocs": true, "explosions": true },
+  "affichage": {
+    "destinataires": "PROCHES",
+    "rayon-proches": 60,
+    "scoreboard": true,
+    "barre": { "longueur": 20, "symbole": "|", "couleur-pleine": "&c", "couleur-vide": "&8" },
+    "top-affiches": 10,
+    "decimales-pourcentage": 0
+  },
+  "sons": {
+    "demarrage": "ENDERDRAGON_GROWL:0.8:1",
+    "bloc": "ZOMBIE_WOODBREAK:0.6:1.2",
+    "attaque": "NOTE_PLING:0.8:1.4",
+    "reconstruction": "ANVIL_USE:0.8:1",
+    "palier": "CLICK:0.8:2",
+    "victoire": "LEVEL_UP",
+    "fin": "ANVIL_LAND:0.6:1",
+    "clic-menu": "CLICK:0.5:1",
+    "erreur": "VILLAGER_NO"
+  },
+  "titres": { "apparition": 5, "duree": 40, "disparition": 10 },
+  "integrations": { "koriaquest": true, "objectif-koriaquest": "GAGNER_TOTEM", "koria-gui": true, "koria-gui-prefixe": "totem_" }
+}

@@ -1,0 +1,38 @@
+{
+  "spawn": {
+    "nom": "&cTotem du Spawn",
+    "icone": "OBSIDIAN",
+    "monde": "world",
+    "position": { "x": 100, "y": 64, "z": 100 },
+    "materiau": "OBSIDIAN",
+    "hauteur": 5,
+    "mode-victoire": "DERNIER-BLOC",
+    "reconstruction": true,
+    "duree-max-minutes": 30,
+    "planning": { "actif": true, "jours": ["MARDI", "JEUDI", "SAMEDI"], "heures": ["20:00"] },
+    "points-victoire": 500,
+    "recompenses": {
+      "cible": "PARTICIPANTS",
+      "vainqueur": ["ARGENT:5000", "ITEM:GOLDEN_APPLE:1:2", "MESSAGE:[title]&c&lTOTEM DÉTRUIT !;;&e{totem}"],
+      "participants": ["ARGENT:250"]
+    }
+  },
+  "desert": {
+    "nom": "&6Totem du Désert",
+    "icone": "EMERALD_BLOCK",
+    "monde": "world",
+    "position": { "x": 0, "y": 0, "z": 0 },
+    "materiau": "EMERALD_BLOCK",
+    "hauteur": 7,
+    "mode-victoire": "PLUS-DE-BLOCS",
+    "reconstruction": false,
+    "duree-max-minutes": 20,
+    "planning": { "actif": false, "jours": ["DIMANCHE"], "heures": ["17:00"] },
+    "points-victoire": 800,
+    "recompenses": {
+      "cible": "MEMBRES_EN_LIGNE",
+      "vainqueur": ["ARGENT:8000", "ANNONCE:{prefix}&6La faction &e{gagnant} &6a abattu le {totem} &6!"],
+      "participants": []
+    }
+  }
+}

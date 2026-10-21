@@ -1,0 +1,157 @@
+{
+  "prefix": "&8[&cTotem&8] &r",
+  "general": {
+    "no-permission": "{prefix}&cVous n'avez pas la permission.",
+    "players-only": "{prefix}&cCette commande est réservée aux joueurs.",
+    "unknown-command": "{prefix}&cCommande inconnue. Faites &f/{label} help&c.",
+    "usage": "{prefix}&cUsage : &f/{label} {command} {usage}",
+    "error": "{prefix}&cUne erreur est survenue, prévenez un administrateur.",
+    "reload-done": "{prefix}&aConfiguration rechargée ({totems} totems chargés).",
+    "reload-problems": "{prefix}&c{count} problème(s) détecté(s) :",
+    "reload-problem": "&8- &c{problem}",
+    "saved": "{prefix}&aStatistiques sauvegardées."
+  },
+  "help": {
+    "header": "&6&m-------&r &eKoriaTotem &6&m-------",
+    "line": "&e/{label} {command} &7{usage} &8- &f{description}",
+    "footer": "&6&m-----------------------------",
+    "commands": {
+      "help": { "usage": "", "description": "Affiche cette aide" },
+      "menu": { "usage": "", "description": "Ouvre le menu des totems" },
+      "list": { "usage": "", "description": "Liste les totems et leur planning" },
+      "top": { "usage": "[totem]", "description": "Classement des factions" },
+      "info": { "usage": "", "description": "État du totem en cours" },
+      "tp": { "usage": "<totem>", "description": "Téléporte à côté d'un totem" },
+      "start": { "usage": "<totem> [force]", "description": "Fait apparaître un totem immédiatement" },
+      "stop": { "usage": "[totem]", "description": "Retire un totem sans vainqueur" },
+      "create": { "usage": "<name>", "description": "Crée un totem sur le bloc regardé" },
+      "delete": { "usage": "<totem>", "description": "Supprime un totem de totems.json" },
+      "position": { "usage": "<totem>", "description": "Place le totem sur le bloc regardé" },
+      "config": { "usage": "[file]", "description": "Éditeur de configuration en jeu" },
+      "save": { "usage": "", "description": "Sauvegarde les statistiques" },
+      "reload": { "usage": "", "description": "Recharge la configuration" }
+    }
+  },
+  "totem": {
+    "start": [
+      "{prefix}&c&lTOTEM &eLe &f{totem} &eest apparu ! &7({monde} : {x}, {y}, {z})",
+      "{prefix}&7Cassez ses &f{total} &7blocs : la faction qui l'abat gagne &6{points} points de faction&7.",
+      "[title]&c&lTOTEM;;&e{totem} &7est apparu"
+    ],
+    "warn": "{prefix}&c&lTOTEM &eLe &f{totem} &eapparaît dans &f{temps} &7({x}, {y}, {z})&e.",
+    "attack": "{prefix}&e{faction} &7attaque le &f{totem} &8({restants}/{total} blocs)",
+    "rebuilt": "{prefix}&c{nouvelle} &7a repris le &f{totem} &7à &c{ancienne} &7: il se reconstruit !",
+    "remaining": "{prefix}&e{faction} &7est sur le point d'abattre le &f{totem} &7: &c{restants} &7bloc(s) restant(s) !",
+    "block-broken": "[actionbar]&c-1 bloc &8| &f{restants}&7/&f{total} &8| &e{faction}",
+    "cannot-break": "{prefix}&cTu ne peux pas casser le totem (créatif, sans faction ou staff).",
+    "win": [
+      "{prefix}&6&lVICTOIRE &e{gagnant} &6a abattu le &f{totem} &6! &7(+{points} points de faction)",
+      "{prefix}&7Dernier bloc : &f{destructeur} &8| &7Meilleur casseur : &f{meilleur} &8({meilleur_blocs} blocs)",
+      "[title]&6{gagnant};;&ea abattu le totem !"
+    ],
+    "timeout": "{prefix}&cTemps écoulé : le &f{totem} &cdisparaît sans vainqueur.",
+    "stopped": "{prefix}&cLe &f{totem} &ca été retiré.",
+    "none-configured": "{prefix}&cAucun totem n'est configuré. Faites &f/{label} create <name>&c.",
+    "unknown": "{prefix}&cTotem inconnu : &f{totem}",
+    "no-position": "{prefix}&cLa position du &f{totem} &cn'est pas définie (&f/{label} position {id}&c).",
+    "teleported": "{prefix}&aTéléporté au &f{totem}&a.",
+    "list-header": "&6&m------&r &eTotems ({total}) &6&m------",
+    "list-line": "&e{totem} &8({id}) &7- {etat} &8| &7planning : &f{planning} &8| &7dernier : &f{dernier}",
+    "list-footer": "&6&m-----------------------------",
+    "info-running": [
+      "{prefix}&e{totem} &7en cours en &f{x}, {y}, {z} &7({monde}).",
+      "{prefix}&7{etat} &8| &7Blocs : &f{restants}&7/&f{total}",
+      "{prefix}{barre} &7Meilleur casseur : &f{meilleur} &8({meilleur_blocs})"
+    ],
+    "info-none": "{prefix}&7Aucun totem en cours et aucune apparition prévue.",
+    "info-next": "{prefix}&7Prochain totem : &e{totem} &7dans &f{temps} &8({x}, {y}, {z})"
+  },
+  "display": {
+    "actionbar": "[actionbar]&c{totem} &8| {barre} &8| &f{restants}&7/&f{total} &8| {etat}",
+    "state-intact": "&7Intact",
+    "state-attacked": "&e{faction} &7casse",
+    "state-waiting": "&7En attente"
+  },
+  "scoreboard": {
+    "title": "&c&l» TOTEM «",
+    "lines": [
+      "&c{totem}",
+      "",
+      "&6Position",
+      "&7» &f{x}, {y}, {z}",
+      "",
+      "&6Blocs restants",
+      "&7» &f{restants}&7/&f{total}",
+      "",
+      "&6Faction qui casse",
+      "&7» &e{faction}",
+      "&7» &f{joueur}",
+      "",
+      "&6Meilleur casseur",
+      "&7» &f{meilleur} ({meilleur_blocs})",
+      "&8&m--------------------"
+    ]
+  },
+  "protection": { "protected-area": "{prefix}&cOn ne construit pas autour du totem pendant l'évènement." },
+  "rewards": {
+    "pending": "{prefix}&aTu as reçu des récompenses pendant ton absence.",
+    "inventory-full": "{prefix}&eInventaire plein : des objets ont été déposés au sol.",
+    "none": "&7Aucune",
+    "describe": { "points": "&6{quantite} points de faction", "money": "&e{quantite}$", "item": "&f{quantite}x {objet}" }
+  },
+  "admin": {
+    "start-ok": "{prefix}&aLe &f{totem} &aest apparu.",
+    "start-inconnu": "{prefix}&cTotem inconnu : &f{id}",
+    "start-deja_en_cours": "{prefix}&cLe &f{totem} &cest déjà en cours.",
+    "start-autre_en_cours": "{prefix}&cUn autre totem est en cours (ajoutez &fforce&c pour passer outre).",
+    "start-position_invalide": "{prefix}&cLa position du &f{totem} &cn'est pas définie ou son monde n'est pas chargé.",
+    "start-annule": "{prefix}&cL'apparition a été annulée par un autre plugin.",
+    "stopped": "{prefix}&aLe &f{totem} &aa été retiré.",
+    "stopped-all": "{prefix}&aTous les totems en cours ont été retirés.",
+    "not-running": "{prefix}&cLe &f{totem} &cn'est pas en cours.",
+    "nothing-running": "{prefix}&cAucun totem n'est en cours.",
+    "created": "{prefix}&aTotem &f{id} &acréé en &f{x}, {y}, {z} &a({monde}). Déplacez-le avec &f/{label} position {id}&a.",
+    "deleted": "{prefix}&aTotem &f{id} &asupprimé.",
+    "confirm-delete": "{prefix}&eRefaites &f/{label} delete {id} &edans les 10 secondes pour confirmer.",
+    "position-set": "{prefix}&aLe totem &f{id} &aapparaîtra en &f{x}, {y}, {z} &a({monde}).",
+    "running-cannot-move": "{prefix}&cLe &f{totem} &cest en cours : arrêtez-le avant de le déplacer.",
+    "invalid-id": "{prefix}&cNom invalide : lettres minuscules, chiffres, - et _ uniquement.",
+    "already-exists": "{prefix}&cLe totem &f{id} &cexiste déjà."
+  },
+  "top": { "all": "Tous les totems" },
+  "planning": { "at": "à" },
+  "values": {
+    "none": "Aucun",
+    "nobody": "Personne",
+    "no-faction": "Aucune",
+    "never": "jamais",
+    "unlimited": "illimitée",
+    "yes-text": "oui",
+    "no-text": "non",
+    "mode-dernier_bloc": "dernier bloc",
+    "mode-plus_de_blocs": "plus de blocs"
+  },
+  "time": { "days": "j", "hours": "h", "minutes": "min", "seconds": "s", "now": "maintenant", "never": "jamais" },
+  "config-editor": {
+    "cancel-word": "annuler",
+    "empty-word": "vide",
+    "prompt": "{prefix}&eÉcrivez la nouvelle valeur de &f{path} &edans le chat (&f{empty} &epour une valeur vide, &f{cancel} &epour annuler).",
+    "prompt-current": "&7Valeur actuelle : &f",
+    "prompt-list-add": "{prefix}&eÉcrivez la valeur à ajouter à &f{path} &e(&f{cancel} &epour annuler).",
+    "prompt-list-replace": "{prefix}&eÉcrivez toutes les valeurs de &f{path}&e, séparées par des virgules (&f{cancel} &epour annuler).",
+    "prompt-add": "{prefix}&eÉcrivez le nom de la nouvelle entrée de &f{path} &e(&f{cancel} &epour annuler).",
+    "cancelled": "{prefix}&7Modification annulée.",
+    "saved": "{prefix}&a{file} : &f{path} &a= &f{value}",
+    "reset": "{prefix}&a{file} : &f{path} &areprend sa valeur par défaut.",
+    "removed": "{prefix}&a{file} : &f{path} &asupprimé.",
+    "added": "{prefix}&a{file} : &f{path} &aajouté.",
+    "confirm-remove": "{prefix}&eRefaites Ctrl + Q dans les 5 secondes pour confirmer (&f{path}&e).",
+    "invalid-number": "{prefix}&c« {input} » n'est pas un nombre.",
+    "invalid-key": "{prefix}&cNom invalide : lettres, chiffres, - _ et : uniquement.",
+    "exists": "{prefix}&cL'entrée &f{key} &cexiste déjà.",
+    "empty-section": "{prefix}&cSection vide : ajoutez la première entrée dans le fichier.",
+    "save-error": "{prefix}&cImpossible d'enregistrer {file} : {error}",
+    "restart": "{prefix}&eCe réglage sera appliqué au prochain redémarrage du serveur.",
+    "unknown-file": "{prefix}&cFichier inconnu : &f{file}&c. Fichiers : config, totems, messages, menus."
+  }
+}

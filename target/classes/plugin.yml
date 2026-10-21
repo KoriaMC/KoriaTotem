@@ -1,0 +1,30 @@
+name: KoriaTotem
+version: 1.0.0
+main: fr.koriamc.totem.KoriaTotem
+author: KoriaMC
+description: Événement Totem pour KoriaMC (Spigot 1.8.8)
+depend: [KoriaFactions]
+softdepend: [Vault, PlaceholderAPI, KoriaQuest]
+
+# La commande principale (/totem par défaut) et ses alias sont enregistrés dynamiquement
+# depuis config.json : ils ne sont donc pas déclarés ici.
+
+permissions:
+  koriatotem.*:
+    description: Accès complet à KoriaTotem
+    default: op
+    children:
+      koriatotem.player: true
+      koriatotem.admin: true
+  koriatotem.player:
+    description: Commandes joueur (les nœuds exacts sont définis dans config.json)
+    default: true
+  koriatotem.admin:
+    description: Commandes d'administration (les nœuds exacts sont définis dans config.json)
+    default: op
+  koriatotem.bypass:
+    description: Construire et casser dans le rayon de protection d'un totem
+    default: op
+  koriatotem.ignore:
+    description: Ne pas pouvoir casser le totem (staff en modération)
+    default: false
