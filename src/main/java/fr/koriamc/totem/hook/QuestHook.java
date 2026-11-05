@@ -66,6 +66,9 @@ public final class QuestHook {
             try {
                 Object context = of.invoke(null, player, plugin.settings().questObjective, 1L);
                 progress.invoke(null, key.invoke(context, totemId));
+                // Objectif commun à tous les évènements (quête « Champion des événements »)
+                Object any = of.invoke(null, player, "GAGNER_EVENEMENT", 1L);
+                progress.invoke(null, key.invoke(any, "TOTEM"));
             } catch (Throwable t) {
                 available = false;
                 plugin.getLogger().log(Level.WARNING, "Progression KoriaQuest impossible, intégration désactivée", t);

@@ -42,7 +42,7 @@
     "reconstruction": true,
     "duree-max-minutes": 30,
     "cible-recompenses": "PARTICIPANTS",
-    "points-victoire": 500,
+    "points-victoire": 2000,
     "annonce-globale": true,
     "annonce-blocs-restants": [3, 2, 1],
     "participation-blocs-minimum": 1,
