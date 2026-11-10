@@ -2,7 +2,7 @@ name: KoriaTotem
 version: ${project.version}
 main: fr.koriamc.totem.KoriaTotem
 author: KoriaMC
-description: ${project.description}
+description: "${project.description}"
 depend: [KoriaFactions]
 softdepend: [Vault, PlaceholderAPI, KoriaQuest]
 
